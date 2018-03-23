@@ -1113,7 +1113,7 @@ contract BitChordCrowdsale is Ownable, usingOraclize{
   TokenContract public token;
 
   address public distributionAddress;
-  uint public startingExchangePrice = 1165134514779731;
+  uint public startingExchangePrice = 1902877214779731;
 
   // Constructor
   function BitChordCrowdsale(address _tokenAddress, address _distribution) public payable {
@@ -1131,17 +1131,17 @@ contract BitChordCrowdsale is Ownable, usingOraclize{
     stage_2_price = startingExchangePrice*16/100;
     stage_3_price = startingExchangePrice*21/100;
 
-    uint tenAM = 1521639000; // Put the erliest 10AM timestamp
+    uint tenAM = 1521799200; // Put the erliest 10AM timestamp
     
     updateFlag = true;
     oraclize_query((findTenAmUtc(tenAM)),"URL", "json(https://api.kraken.com/0/public/Ticker?pair=ETHUSD).result.XETHZUSD.c.0");
   }
 
-  uint public constant STAGE_1_START = 0; //1523404860 
+  uint public constant STAGE_1_START = 1523404860; //1523404860 
   uint public constant STAGE_1_FINISH = 1525132740;
 
   uint public stage_1_price;
-  uint public constant STAGE_1_MAXCAP = 8000 ether;// 3100000 ether; 
+  uint public constant STAGE_1_MAXCAP = 3100000 ether; 
 
   uint public constant STAGE_2_START = 1525132860; 
   uint public constant STAGE_2_FINISH = 1526687940; 
